@@ -1,6 +1,6 @@
 # Filecoin Storage Providers Market
 
-A dashboard that provides visibility into the Filecoin market between Storage Clients and Storage Providers (SPs).
+A dashboard that provides visibility into the Filecoin market between Storage Clients and Storage Providers.
 
 This is an [Observable Framework](https://observablehq.com/framework) app. To start the local preview server, run:
 
