@@ -2,7 +2,7 @@
 
 Get visibility into the market between Storage Clients and Storage Providers. The goal is to help Storage Clients find potential Storage Providers, and to help Storage Providers understand how they are evaluated and compared.
 
-- Learn more about the [metrics](metrics.md).
+- Learn more about the [metrics](metrics).
 - Check the [code](https://github.com/davidgasquez/filecoin-storage-providers-market).
 
 ```js
