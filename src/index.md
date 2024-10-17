@@ -5,37 +5,35 @@ Get visibility into the market between Storage Clients and Storage Providers. Th
 - Learn more about the [metrics](metrics.md).
 - Learn more about the [data](data.md).
 
+```js
+const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true});
+```
+
 ## Metrics
 
-<div class="grid grid-cols-2">
+<div class="grid grid-cols-3">
 
   <div class="card">
-  <h1>Storage Providers Making Deals</h1>
+  <h1>Unique Deal Making Providers</h1>
+
 
   ```js
-  Plot.lineY(aapl, {x: "Date", y: "Close"}).plot({y: {grid: true}})
+  Plot.lineY(daily_metrics, {x: "date", y: "unique_deal_making_providers"}).plot({y: {grid: true}})
   ```
 
   </div>
 
-  <div class="card"><h1>Storage Providers With Active Deals</h1>
+  <div class="card"><h1>Providers With Active Deals</h1>
 
   ```js
-  Plot.lineY(aapl, {x: "Date", y: "Close"}).plot({y: {grid: true}})
+  Plot.lineY(daily_metrics, {x: "date", y: "providers_with_active_deals"}).plot({y: {grid: true}})
   ```
 
   </div>
-  <div class="card"><h1>Hot Service Class Conformance</h1>
+  <div class="card"><h1>Providers With Power</h1>
 
   ```js
-  Plot.lineY(aapl, {x: "Date", y: "Close"}).plot({y: {grid: true}})
-  ```
-
-  </div>
-  <div class="card"><h1>Archive Service Class Conformance</h1>
-
-  ```js
-  Plot.lineY(aapl, {x: "Date", y: "Close"}).plot({y: {grid: true}})
+  Plot.lineY(daily_metrics, {x: "date", y: "providers_with_power"}).plot({y: {grid: true}})
   ```
 
   </div>
@@ -45,6 +43,11 @@ Get visibility into the market between Storage Clients and Storage Providers. Th
 
 The table below lists metrics for all Storage Providers who have made at least one deal in the last 6 months.
 
+
 ```js
-Inputs.table(penguins)
+const storage_providers = FileAttachment("data/storage_providers.csv").csv({typed: true});
+```
+
+```js
+Inputs.table(storage_providers)
 ```
