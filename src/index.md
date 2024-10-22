@@ -191,7 +191,7 @@ Inputs.table(storage_providers, {
   rows: 20,
   select: false,
   format: {
-    provider_id: id => htl.html`<a href=/provider/${id} target=_blank>${id}</a>`
+    provider_id: id => htl.html`<a href=/filecoin-storage-providers-market/provider/${id} target=_blank>${id}</a>`
   }
 })
 ```
