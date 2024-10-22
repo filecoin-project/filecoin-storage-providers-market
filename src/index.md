@@ -80,6 +80,71 @@ const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true}
   </div>
 </div>
 
+<div class="grid grid-cols-2">
+  <div class="card">
+
+  ```js
+  resize((width) => Plot.plot({
+    title: "Hot Service Conformance",
+    subtitle: "Percentage of providers conforming to hot SLO standards",
+    x: { label: "Date" },
+    y: {
+      grid: true,
+      label: "Conformance (%)",
+      domain: [0, 100]
+    },
+    width,
+    marks: [
+      Plot.ruleY([0]),
+      Plot.ruleY([80]),
+      Plot.text(
+        ["To be implemented"],
+        {
+          x: 0,
+          y: 40,
+          fontSize: 48,
+          fill: "var(--theme-foreground-faint)"
+        }
+      )
+    ]
+  }))
+  ```
+
+  </div>
+
+  <div class="card">
+
+  ```js
+  resize((width) => Plot.plot({
+    title: "Archive Service Conformance",
+    subtitle: "Percentage of providers conforming to archive SLO standards",
+    x: { label: "Date" },
+    y: {
+      grid: true,
+      label: "Conformance (%)",
+      domain: [0, 100]
+    },
+    width,
+    marks: [
+      Plot.ruleY([0]),
+      Plot.ruleY([80]),
+      Plot.text(
+        ["To be implemented"],
+        {
+          x: 0,
+          y: 40,
+          fontSize: 48,
+          fill: "var(--theme-foreground-faint)"
+        }
+      )
+    ]
+  }))
+  ```
+
+  </div>
+
+</div>
+
 ## Storage Providers
 
 The table below lists metrics for Filecoin Storage Providers.
@@ -90,5 +155,43 @@ const storage_providers = FileAttachment("data/storage_providers.csv").csv({type
 ```
 
 ```js
-Inputs.table(storage_providers)
+Inputs.table(storage_providers, {
+  columns: [
+    "provider_id",
+    "total_active_deals",
+    "total_active_data_uploaded_tibs",
+    "total_active_unique_clients",
+    "first_deal_at",
+    "last_deal_at",
+    "raw_power_pibs",
+    "quality_adjusted_power_pibs",
+    "balance",
+    "initial_pledge",
+    "locked_funds",
+    "provider_collateral",
+    "capacity_utilization_ratio"
+  ],
+  header: {
+    provider_id: "Provider ID",
+    total_active_deals: "Active Deals",
+    total_active_data_uploaded_tibs: "Active Data Uploaded (TiB)",
+    total_active_unique_clients: "Active Unique Clients",
+    first_deal_at: "First Deal At",
+    last_deal_at: "Last Deal At",
+    raw_power_pibs: "Raw Power (PiB)",
+    quality_adjusted_power_pibs: "Quality Adjusted Power (PiB)",
+    balance: "Balance",
+    initial_pledge: "Initial Pledge",
+    locked_funds: "Locked Funds",
+    provider_collateral: "Provider Collateral",
+    capacity_utilization_ratio: "Capacity Utilization Ratio"
+  },
+  sort: "total_active_deals",
+  reverse: true,
+  rows: 20,
+  select: false,
+  format: {
+    provider_id: id => htl.html`<a href=/provider/${id} target=_blank>${id}</a>`
+  }
+})
 ```
