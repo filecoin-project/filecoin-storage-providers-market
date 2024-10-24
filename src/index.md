@@ -195,3 +195,7 @@ Inputs.table(storage_providers, {
   }
 })
 ```
+
+---
+
+_Data used in this dashboard comes from the [Filecoin Data Portal](https://filecoindataportal.xyz/) andis available without any warranties or guarantees of any kind, either expressed or implied._
