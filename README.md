@@ -1,7 +1,23 @@
-# Filecoin Storage Providers Market
+# Filecoin Storage Providers Market Dashboard
 
-A dashboard that provides visibility into the Filecoin market between Storage Clients and Storage Providers.
+## Status
+At least of 2024-10-30, this dasbhoard is a scrappy work-in-progress to help spur discussion at [FDS-5 Bangkok](https://www.fildev.io/FDS-5) and shouldn't be viewed as canonical.  It is being worked on actively by members of the "[PMF Targets Working Group](https://protocollabs.notion.site/Filecoin-PMF-Targets-Working-Group-111837df73d480b6a3a9e5bfd73063de?pvs=4)".
 
+## Purpose
+
+The purpose of this dashboard currently is to help fascilitate the market between onramps/aggregators and Storage Providers (SPs) so onramps/aggregators can find SPs to use and SPs can understand how they are being evaluated.  This is being done by by exposing SP performance against the service classes with their supporting SLOs as defined in [filecoin-project/service-classes](https://github.com/filecoin-project/service-classes).
+
+## Dasbhaord URL
+https://filecoin-project.github.io/filecoin-storage-providers-market/
+
+> In future, this may house under a different domain.
+
+## Contributing
+If you want to help with data presentation, layout, etc. please see [implementation details](#implementation-details) below and open a PR.
+
+Discussion and improvement proposals around service classes, SLOs, SLIs, and their defitions should occur in [filecoin-project/service-classes](https://github.com/filecoin-project/service-classes).
+
+# Implementation Details
 This is an [Observable Framework](https://observablehq.com/framework) app. To start the local preview server, run:
 
 ```
