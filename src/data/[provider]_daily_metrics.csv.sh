@@ -18,7 +18,7 @@ if [ ! -f "$TMPDIR/storage_providers_metrics.parquet" ]; then
         raw_power_pibs,
         quality_adjusted_power_pibs
       FROM read_parquet('https://data.filecoindataportal.xyz/filecoin_daily_storage_providers_metrics.parquet')
-      WHERE date >= CURRENT_DATE() - INTERVAL '30 days'
+      WHERE date >= CURRENT_DATE() - INTERVAL '90 days'
       ORDER BY date desc
     ) TO '$TMPDIR/storage_providers_metrics.parquet' (FORMAT 'PARQUET');
 EOF

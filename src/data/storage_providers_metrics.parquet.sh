@@ -20,7 +20,7 @@ COPY (
     quality_adjusted_power_pibs
   FROM read_parquet('https://data.filecoindataportal.xyz/filecoin_daily_storage_providers_metrics.parquet')
   WHERE 1=1
-    AND date >= CURRENT_DATE() - INTERVAL '30 days'
+    AND date >= CURRENT_DATE() - INTERVAL '90 days'
     AND provider_id IN (SELECT provider_id FROM interesting_providers)
   ORDER BY provider_id desc, date desc
 

@@ -9,6 +9,6 @@ COPY (
     providers_with_active_deals,
     providers_with_power,
   FROM read_parquet('https://data.filecoindataportal.xyz/filecoin_daily_metrics.parquet')
-  WHERE date >= CURRENT_DATE() - INTERVAL '30 days'
+  WHERE date >= CURRENT_DATE() - INTERVAL '90 days'
 ) TO STDOUT (FORMAT 'CSV');
 EOF
