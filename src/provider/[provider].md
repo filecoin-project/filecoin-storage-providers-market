@@ -15,10 +15,10 @@ const provider_metrics = FileAttachment(`../data/${observable.params.provider}_d
 
   ```js
   resize((width) => Plot.plot({
-    title: "Onboarded Data",
-    caption: "Data onboarded in TiB",
+    title: "State Market Deals Data Onboarding",
+    subtitle: "Data onboarded via state market deals",
     x: {label: "Date"},
-    y: {grid: true, label: "TiB"},
+    y: {grid: true, label: "TiBs"},
     width,
     marks: [
       Plot.ruleY([0]),
@@ -36,8 +36,8 @@ const provider_metrics = FileAttachment(`../data/${observable.params.provider}_d
 
   ```js
   resize((width) => Plot.plot({
-    title: "Deals",
-    caption: "Showing only State Market deals",
+    title: "State Market Deals",
+    subtitle: "Showing only State Market deals",
     x: {label: "Date"},
     y: {grid: true, label: "Deals"},
     width,
@@ -94,5 +94,51 @@ const provider_metrics = FileAttachment(`../data/${observable.params.provider}_d
   }))
   ```
 </div>
+</div>
 
+
+<div class="grid grid-cols-2">
+<div class="card">
+
+  ```js
+  resize((width) => Plot.plot({
+    title: "Sector Added Events",
+    caption: "Number of sector added events",
+    x: {label: "Date"},
+    y: {grid: true, label: "Count"},
+    width,
+    marks: [
+      Plot.ruleY([0]),
+      Plot.rectY(provider_metrics, {
+        x: "date",
+        y: "sector_added_events_count",
+        tip: true,
+        interval: "day"
+      })
+    ]
+  }))
+  ```
+</div>
+
+<div class="card">
+
+  ```js
+  resize((width) => Plot.plot({
+    title: "Sector Faulted Events",
+    caption: "Number of sector faulted events",
+    x: {label: "Date"},
+    y: {grid: true, label: "Count"},
+    width,
+    marks: [
+      Plot.ruleY([0]),
+      Plot.rectY(provider_metrics, {
+        x: "date",
+        y: "sector_faulted_events_count",
+        tip: true,
+        interval: "day"
+      })
+    ]
+  }))
+  ```
+</div>
 </div>

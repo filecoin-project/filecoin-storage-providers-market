@@ -46,8 +46,8 @@ This is an aggregate view looking at all Storage Providers on the network.
 
   ```js
   resize((width) => Plot.plot(addPlotCaption({
-    title: "Providers Making Onchain Deals",
-    subtitle: "On a given day, how many providers made an online deal.",
+    title: "Providers Making State Market Deals",
+    subtitle: "On a given day, how many providers made a state market deal.",
     x: {label: "Date"},
     y: {grid: true, label: "Providers"},
     width,
@@ -68,8 +68,8 @@ This is an aggregate view looking at all Storage Providers on the network.
 
   ```js
   resize((width) => Plot.plot(addPlotCaption({
-    title: "Providers With Active Deals",
-    subtitle: "How many providers have active deals.",
+    title: "Providers With Active State Market Deals",
+    subtitle: "How many providers have active state market deals.",
     x: { label: "Date" },
     y: { grid: true, label: "Providers", zero: true },
     width,
@@ -91,7 +91,7 @@ This is an aggregate view looking at all Storage Providers on the network.
   ```js
   resize((width) => Plot.plot(addPlotCaption({
     title: "Providers With Power",
-    subtitle: "How many providers are with power.",
+    subtitle: "How many providers have power in the network.",
     x: { label: "Date" },
     y: { grid: true, label: "Providers", zero: true },
     width,
