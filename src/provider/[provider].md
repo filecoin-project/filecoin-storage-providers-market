@@ -10,6 +10,71 @@
 const provider_metrics = FileAttachment(`../data/${observable.params.provider}_daily_metrics.csv`).csv({typed: true});
 ```
 
+
+## Retrievals
+
+<div class="grid grid-cols-2">
+<div class="card">
+
+  ```js
+  resize((width) => Plot.plot({
+    title: "Retrieval Success Rate",
+    subtitle: "Percentage of successful retrievals",
+    x: {label: "Date"},
+    y: {
+      grid: true,
+      label: "Success Rate (%)",
+      domain: [0, 100]
+    },
+    width,
+    marks: [
+      Plot.ruleY([0]),
+      Plot.lineY(provider_metrics, {
+        x: "date",
+        y: d => d.successful_retrieval_requests / d.total_retrieval_requests * 100 || 0,
+        stroke: "orange",
+        tip: true
+      })
+    ]
+  }))
+  ```
+</div>
+<div class="card">
+
+  ```js
+  resize((width) => Plot.plot({
+    title: "Retrieval Requests",
+    x: {label: "Date"},
+    y: {grid: true, label: "Requests"},
+    width,
+    marks: [
+      Plot.ruleY([0]),
+      Plot.lineY(provider_metrics, {
+        x: "date",
+        y: "total_retrieval_requests",
+        stroke: "steelblue",
+        tip: true
+      }),
+      Plot.lineY(provider_metrics, {
+        x: "date",
+        y: "successful_retrieval_requests",
+        stroke: "seagreen",
+        tip: true
+      })
+    ],
+    color: {
+      legend: true,
+      domain: ["Total Requests", "Successful Requests"],
+      range: ["steelblue", "seagreen"]
+    }
+  }))
+  ```
+</div>
+</div>
+
+
+## Other Metrics
+
 <div class="grid grid-cols-2">
 <div class="card">
 

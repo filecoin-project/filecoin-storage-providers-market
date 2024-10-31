@@ -19,8 +19,8 @@ if [ ! -f "$TMPDIR/storage_providers_metrics.parquet" ]; then
         quality_adjusted_power_pibs,
 
         -- Spark Retrieval Metrics
-        -- total_retrieval_requests,
-        -- successful_retrieval_requests,
+        total_retrieval_requests,
+        successful_retrieval_requests,
 
         -- Sector Events
         sector_added_events_count,
