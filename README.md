@@ -18,7 +18,13 @@ If you want to help with data presentation, layout, etc. please see [implementat
 Discussion and improvement proposals around service classes, SLOs, SLIs, and their defitions should occur in [filecoin-project/service-classes](https://github.com/filecoin-project/service-classes).
 
 # Implementation Details
-This is an [Observable Framework](https://observablehq.com/framework) app. To start the local preview server, run:
+This is an [Observable Framework](https://observablehq.com/framework) app.  Ensure you have the corresponding dependencies installed with:
+
+```
+npm install
+```
+
+To start the local preview server, run:
 
 ```
 npm run dev
