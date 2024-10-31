@@ -6,7 +6,8 @@
 - Check the [code](https://github.com/filecoin-project/filecoin-storage-providers-market).
 
 ## Status
-TODO: fill this in about where we're currently at on 2024-10-30.  I'll just pull from theh README.
+
+This dasbhoard is a scrappy work-in-progress to help spur discussion at [FDS-5 Bangkok](https://www.fildev.io/FDS-5) and shouldn't be viewed as canonical.  It is being worked on actively by members of the "[PMF Targets Working Group](https://protocollabs.notion.site/Filecoin-PMF-Targets-Working-Group-111837df73d480b6a3a9e5bfd73063de?pvs=4)".
 
 ```js
 const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true});
@@ -34,9 +35,11 @@ function createAnchorId(str) {
 ```
 
 ## Network-Wide Metrics
+
 This is an aggregate view looking at all Storage Providers on the network.
 
 ### SP Activity
+
 <div class="grid grid-cols-3">
 
   <div class="card">
@@ -107,6 +110,7 @@ This is an aggregate view looking at all Storage Providers on the network.
 </div>
 
 ### Service Class Conformance
+
 <div class="grid grid-cols-2">
   <div class="card">
 
@@ -175,7 +179,6 @@ This is an aggregate view looking at all Storage Providers on the network.
 ## Storage Providers
 
 The table below lists metrics for Filecoin Storage Providers.
-
 
 ```js
 const storage_providers = FileAttachment("data/storage_providers.csv").csv({typed: true});
