@@ -19,7 +19,8 @@ export default {
   root: "src",
   theme: [
     "parchment",
-    "alt"
+    "alt",
+    "wide", // 2024-10-30: this didn't have the expected impact
   ],
   footer: false,
   sidebar: false,
