@@ -16,7 +16,15 @@ if [ ! -f "$TMPDIR/storage_providers_metrics.parquet" ]; then
         onboarded_data_tibs,
         deals,
         raw_power_pibs,
-        quality_adjusted_power_pibs
+        quality_adjusted_power_pibs,
+
+        -- Spark Retrieval Metrics
+        -- total_retrieval_requests,
+        -- successful_retrieval_requests,
+
+        -- Sector Events
+        sector_added_events_count,
+        sector_faulted_events_count,
       FROM read_parquet('https://data.filecoindataportal.xyz/filecoin_daily_storage_providers_metrics.parquet')
       WHERE date >= CURRENT_DATE() - INTERVAL '90 days'
       ORDER BY date desc
@@ -28,12 +36,7 @@ duckdb :memory: << EOF
 SET enable_progress_bar = false;
 COPY (
   SELECT
-    date,
-    provider_id,
-    onboarded_data_tibs,
-    deals,
-    raw_power_pibs,
-    quality_adjusted_power_pibs
+    *
   FROM '$TMPDIR/storage_providers_metrics.parquet'
   WHERE provider_id = '${provider}'
   ORDER BY date desc
