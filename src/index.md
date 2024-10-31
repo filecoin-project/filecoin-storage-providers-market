@@ -1,24 +1,50 @@
-# Filecoin Storage Providers Market
+# Filecoin Storage Providers Market Dashboard
 
-Get visibility into the market between Storage Clients and Storage Providers. The goal is to help Storage Clients find potential Storage Providers, and to help Storage Providers understand how they are evaluated and compared.
+👋 **Welcome!** 🔎 Get visibility into the market between Storage Clients and Storage Providers.  🎯 The goal is to help Storage Clients like onramps and aggregators find potential Storage Providers, and to help Storage Providers understand how they are evaluated and compared.
 
 - Learn more about the [metrics](metrics).
-- Check the [code](https://github.com/davidgasquez/filecoin-storage-providers-market).
+- Check the [code](https://github.com/filecoin-project/filecoin-storage-providers-market).
+
+## Status
+TODO: fill this in about where we're currently at on 2024-10-30.  I'll just pull from theh README.
 
 ```js
 const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true});
+
+// Mutates the provided plotConfig by adding a caption if one doesn't exist
+function addPlotCaption(plotConfig, href) {
+  if (!plotConfig.caption) {
+    plotConfig.caption = html`<a href="./metrics#${createAnchorId(plotConfig.title)}">❓ Learn More</a>`;
+  }
+  return plotConfig;
+}
+
+// Creates an anchor tag id from a string by:
+// - Converting to lowercase
+// - Replacing spaces and non-alphanumeric chars with hyphens
+// - Removing consecutive hyphens
+// - Trimming hyphens from start/end
+function createAnchorId(str) {
+  return str
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
 ```
 
-## Metrics
+## Network-Wide Metrics
+This is an aggregate view looking at all Storage Providers on the network.
 
+### SP Activity
 <div class="grid grid-cols-3">
 
   <div class="card">
 
   ```js
-  resize((width) => Plot.plot({
-    title: "Deal Making Providers",
-    subtitle: "How many providers are making deals.",
+  resize((width) => Plot.plot(addPlotCaption({
+    title: "Providers Making Onchain Deals",
+    subtitle: "On a given day, how many providers made an online deal.",
     x: {label: "Date"},
     y: {grid: true, label: "Providers"},
     width,
@@ -30,7 +56,7 @@ const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true}
         tip: true
       })
     ]
-  }))
+  })))
   ```
 
   </div>
@@ -38,7 +64,7 @@ const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true}
   <div class="card">
 
   ```js
-  resize((width) => Plot.plot({
+  resize((width) => Plot.plot(addPlotCaption({
     title: "Providers With Active Deals",
     subtitle: "How many providers have active deals.",
     x: { label: "Date" },
@@ -52,7 +78,7 @@ const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true}
         tip: true
       })
     ]
-  }))
+  })))
   ```
 
   </div>
@@ -60,7 +86,7 @@ const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true}
   <div class="card">
 
   ```js
-  resize((width) => Plot.plot({
+  resize((width) => Plot.plot(addPlotCaption({
     title: "Providers With Power",
     subtitle: "How many providers are with power.",
     x: { label: "Date" },
@@ -74,19 +100,20 @@ const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true}
         tip: true
       })
     ]
-  }))
+  })))
   ```
 
   </div>
 </div>
 
+### Service Class Conformance
 <div class="grid grid-cols-2">
   <div class="card">
 
   ```js
-  resize((width) => Plot.plot({
-    title: "Hot Service Conformance",
-    subtitle: "Percentage of providers conforming to hot SLO standards",
+  resize((width) => Plot.plot(addPlotCaption({
+    title: "\"Warm\" Service Class Conformance",
+    subtitle: html`Percentage of providers conforming to warm service class`,
     x: { label: "Date" },
     y: {
       grid: true,
@@ -107,7 +134,7 @@ const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true}
         }
       )
     ]
-  }))
+  })))
   ```
 
   </div>
@@ -115,8 +142,8 @@ const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true}
   <div class="card">
 
   ```js
-  resize((width) => Plot.plot({
-    title: "Archive Service Conformance",
+  resize((width) => Plot.plot(addPlotCaption({
+    title: "\"Cold\" Service Class Conformance",
     subtitle: "Percentage of providers conforming to archive SLO standards",
     x: { label: "Date" },
     y: {
@@ -138,7 +165,7 @@ const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true}
         }
       )
     ]
-  }))
+  })))
   ```
 
   </div>
