@@ -19,8 +19,7 @@ export default {
   root: "src",
   theme: [
     "parchment",
-    "alt",
-    "wide", // 2024-10-30: this didn't have the expected impact
+    "dashboard"
   ],
   footer: false,
   sidebar: false,

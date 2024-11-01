@@ -10,7 +10,6 @@
 const provider_metrics = FileAttachment(`../data/${observable.params.provider}_daily_metrics.csv`).csv({typed: true});
 ```
 
-
 ## Retrievals
 
 <div class="grid grid-cols-2">
@@ -72,6 +71,37 @@ const provider_metrics = FileAttachment(`../data/${observable.params.provider}_d
 </div>
 </div>
 
+## Durability
+
+<div class="card">
+
+```js
+resize((width) => Plot.plot({
+  title: "Durability",
+  subtitle: "Percentage of sectors that have faulted on a given day",
+  x: { label: "Date" },
+  y: {
+    grid: true,
+    label: "Fault Rate (%)",
+    domain: [0, 100]
+  },
+  width,
+  marks: [
+    Plot.ruleY([0]),
+    Plot.text(
+      ["To be implemented"],
+      {
+        x: 0,
+        y: 40,
+        fontSize: 48,
+        fill: "var(--theme-foreground-faint)"
+      }
+    )
+  ]
+}))
+```
+
+</div>
 
 ## Other Metrics
 
