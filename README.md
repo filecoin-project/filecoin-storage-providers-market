@@ -14,6 +14,9 @@ https://filecoin-project.github.io/filecoin-storage-providers-market/
 
 > In future, this may house under a different domain.
 
+## Other Documentation
+See [metrics.md](./src/metrics.md) and [faq.md](./src/faq.md)
+
 ## Contributing
 
 If you want to help with data presentation, layout, etc. please see [implementation details](#implementation-details) below and open a PR.
