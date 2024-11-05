@@ -4,20 +4,35 @@
 
 <br>
 
-# ${observable.params.provider}
+# ${observable.params.provider} <!-- omit from toc -->
+
+- [Service Class Performance](#service-class-performance)
+  - ["Warm" Service Class](#warm-service-class)
+    - [Retrievability](#retrievability)
+- [Durability](#durability)
+- [Other Metrics](#other-metrics)
+  - [Power](#power)
+  - [Sectors](#sectors)
+
 
 ```js
 const provider_metrics = FileAttachment(`../data/${observable.params.provider}_daily_metrics.csv`).csv({typed: true});
 ```
 
-## Retrievals
+## Service Class Performance
+_How an SP performs against the [various defined service classes and their coresponding service level objectives](https://github.com/filecoin-project/service-classes)._
+
+### "Warm" Service Class
+_How an SP performs again the ["warm" service class](https://github.com/filecoin-project/service-classes/service-classes/warm.md)._
+
+#### Retrievability
 
 <div class="grid grid-cols-2">
 <div class="card">
 
   ```js
   resize((width) => Plot.plot({
-    title: "Retrieval Success Rate",
+    title: "Spark Retrieval Success Rate",
     subtitle: "Percentage of successful retrievals",
     x: {label: "Date"},
     y: {
@@ -42,7 +57,7 @@ const provider_metrics = FileAttachment(`../data/${observable.params.provider}_d
 
   ```js
   resize((width) => Plot.plot({
-    title: "Retrieval Requests",
+    title: "Spark Retrieval Requests",
     x: {label: "Date"},
     y: {grid: true, label: "Requests"},
     width,
@@ -103,7 +118,9 @@ resize((width) => Plot.plot({
 
 </div>
 
-## Other Metrics
+## Storage Provider Activity
+
+### Deals
 
 <div class="grid grid-cols-2">
 <div class="card">
@@ -147,7 +164,10 @@ resize((width) => Plot.plot({
   }))
   ```
 </div>
+</div>
 
+### Power
+<div class="grid grid-cols-2">
 <div class="card">
 
   ```js
@@ -191,7 +211,7 @@ resize((width) => Plot.plot({
 </div>
 </div>
 
-
+### Sectors
 <div class="grid grid-cols-2">
 <div class="card">
 
