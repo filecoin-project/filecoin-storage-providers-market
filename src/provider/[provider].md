@@ -9,8 +9,9 @@
 - [Service Class Performance](#service-class-performance)
   - ["Warm" Service Class](#warm-service-class)
     - [Retrievability](#retrievability)
-- [Durability](#durability)
-- [Other Metrics](#other-metrics)
+    - [Durability](#durability)
+- [Storage Provider Activity](#storage-provider-activity)
+  - [Deals](#deals)
   - [Power](#power)
   - [Sectors](#sectors)
 
@@ -23,7 +24,7 @@ const provider_metrics = FileAttachment(`../data/${observable.params.provider}_d
 _How an SP performs against the [various defined service classes and their coresponding service level objectives](https://github.com/filecoin-project/service-classes)._
 
 ### "Warm" Service Class
-_How an SP performs again the ["warm" service class](https://github.com/filecoin-project/service-classes/service-classes/warm.md)._
+_How an SP performs again the [(TBD) "warm" service class](https://github.com/filecoin-project/service-classes/service-classes/warm.md)._
 
 #### Retrievability
 
@@ -86,7 +87,7 @@ _How an SP performs again the ["warm" service class](https://github.com/filecoin
 </div>
 </div>
 
-## Durability
+#### Durability 
 
 <div class="card">
 
