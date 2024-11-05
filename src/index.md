@@ -110,59 +110,6 @@ This is an aggregate view looking at all Storage Providers on the network.
   </div>
 </div>
 
-### Retrieval Service Class Conformance
-
-<div class="grid grid-cols-2">
-  <div class="card">
-
-  ```js
-  resize((width) => Plot.plot(addPlotCaption({
-    title: "Providers Meeting Retrieval SLI",
-    subtitle: "Number of providers with >90% successful retrievals",
-    x: { label: "Date" },
-    y: { grid: true, label: "Providers", zero: true },
-    width,
-    marks: [
-      Plot.ruleY([0]),
-      Plot.lineY(daily_retrieval_metrics, {
-        x: "date",
-        y: "meet_retrieval_sli",
-        tip: true
-      })
-    ]
-  })))
-  ```
-
-  </div>
-
-  <div class="card">
-
-  ```js
-  resize((width) => Plot.plot(addPlotCaption({
-    title: "Providers Meeting Retrieval SLI (%)",
-    subtitle: "Percentage of providers with >90% successful retrievals",
-    x: { label: "Date" },
-    y: {
-      grid: true,
-      label: "Percentage",
-      domain: [0, 100]
-    },
-    width,
-    marks: [
-      Plot.ruleY([0]),
-      Plot.lineY(daily_retrieval_metrics, {
-        x: "date",
-        y: d => d.meet_retrieval_sli_percent * 100,
-        tip: true
-      })
-    ]
-  })))
-  ```
-
-  </div>
-</div>
-
-
 
 ### Service Class Conformance
 
@@ -172,26 +119,21 @@ This is an aggregate view looking at all Storage Providers on the network.
   ```js
   resize((width) => Plot.plot(addPlotCaption({
     title: "\"Warm\" Service Class Conformance",
-    subtitle: html`Percentage of providers conforming to warm service class`,
+    subtitle: html`Providers conforming to warm service class`,
     x: { label: "Date" },
     y: {
       grid: true,
-      label: "Conformance (%)",
+      label: "Meet Retrieval SLI",
       domain: [0, 100]
     },
     width,
     marks: [
       Plot.ruleY([0]),
-      Plot.ruleY([80]),
-      Plot.text(
-        ["To be implemented"],
-        {
-          x: 0,
-          y: 40,
-          fontSize: 48,
-          fill: "var(--theme-foreground-faint)"
-        }
-      )
+      Plot.lineY(daily_retrieval_metrics, {
+        x: "date",
+        y: "meet_retrieval_sli",
+        tip: true,
+      })
     ]
   })))
   ```
@@ -203,7 +145,7 @@ This is an aggregate view looking at all Storage Providers on the network.
   ```js
   resize((width) => Plot.plot(addPlotCaption({
     title: "\"Cold\" Service Class Conformance",
-    subtitle: "Percentage of providers conforming to archive SLO standards",
+    subtitle: "Providers conforming to archive SLO standards",
     x: { label: "Date" },
     y: {
       grid: true,
