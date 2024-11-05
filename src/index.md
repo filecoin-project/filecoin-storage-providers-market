@@ -37,7 +37,7 @@ function createAnchorId(str) {
 
 ## Network-Wide Metrics
 
-This is an aggregate view looking at all Storage Providers on the network.
+These are aggregate views looking at all Storage Providers on the network.
 
 ### SP Activity
 
@@ -112,6 +112,8 @@ This is an aggregate view looking at all Storage Providers on the network.
 
 
 ### Service Class Conformance
+
+Service Classes and their corresponding Service Level Objectives are defined in [filecoin-project/service-classes](https://github.com/filecoin-project/service-classes).
 
 <div class="grid grid-cols-2">
   <div class="card">
