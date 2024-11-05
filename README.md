@@ -20,9 +20,15 @@ If you want to help with data presentation, layout, etc. please see [implementat
 
 Discussion and improvement proposals around service classes, SLOs, SLIs, and their defitions should occur in [filecoin-project/service-classes](https://github.com/filecoin-project/service-classes).
 
+## Development environment
+Below are the expected tools to install:
+* `npm` - Not needed if you're using [devcontainer.json](.devontainer/devcontainer.json)
+* [DuckDB CLI](https://duckdb.org/docs/installation/) - Not needed if you're using [devcontainer.json](.devontainer/devcontainer.json)
+* [Markdown All in One VS Code extension](https://markdown-all-in-one.github.io/) - This is used for markdown-all-in-one.github.io/docs/guide/table-of-contents.html, including its syntax for for ommitting certain headers.  
+
 ## Implementation Details
 
-This is an [Observable Framework](https://observablehq.com/framework) app. You'll need to install the [DuckDB CLI](https://duckdb.org/docs/installation/) and then run:
+This is an [Observable Framework](https://observablehq.com/framework) app. With a properly setup [development environment](#development-environment) run:
 
 ```bash
 npm install
