@@ -1,9 +1,3 @@
-<nav>
-  <a href="/">← Back to Home</a>
-</nav>
-
-<br>
-
 # ${observable.params.provider} <!-- omit from toc -->
 
 - [Service Class Performance](#service-class-performance)
