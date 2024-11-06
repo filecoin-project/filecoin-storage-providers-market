@@ -87,12 +87,12 @@ _How an SP performs again the [(TBD) "warm" service class](https://github.com/fi
 
 ```js
 resize((width) => Plot.plot({
-  title: "Durability",
-  subtitle: "Percentage of sectors that have faulted on a given day",
+  title: "Sector Health Rate",
+  subtitle: "Percentage of sectors that have submitted an accepted proof of spacetime.",
   x: { label: "Date" },
   y: {
     grid: true,
-    label: "Fault Rate (%)",
+    label: "Health Rate (%)",
     domain: [0, 100]
   },
   width,
