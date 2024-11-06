@@ -7,7 +7,7 @@
 
 ## Status
 
-This dasbhoard is a scrappy work-in-progress to help spur discussion at [FDS-5 Bangkok](https://www.fildev.io/FDS-5) and shouldn't be viewed as canonical.  It is being worked on actively by members of the "[PMF Targets Working Group](https://protocollabs.notion.site/Filecoin-PMF-Targets-Working-Group-111837df73d480b6a3a9e5bfd73063de?pvs=4)".
+This dashboard is a scrappy work-in-progress to help spur discussion at [FDS-5 Bangkok](https://www.fildev.io/FDS-5) and shouldn't be viewed as canonical.  It is being worked on actively by members of the "[PMF Targets Working Group](https://protocollabs.notion.site/Filecoin-PMF-Targets-Working-Group-111837df73d480b6a3a9e5bfd73063de?pvs=4)".
 
 ```js
 const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true});
