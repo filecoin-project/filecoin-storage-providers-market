@@ -2,11 +2,11 @@
 
 ## Status
 
-At least of 2024-10-30, this dasbhoard is a scrappy work-in-progress to help spur discussion at [FDS-5 Bangkok](https://www.fildev.io/FDS-5) and shouldn't be viewed as canonical.  It is being worked on actively by members of the "[PMF Targets Working Group](https://protocollabs.notion.site/Filecoin-PMF-Targets-Working-Group-111837df73d480b6a3a9e5bfd73063de?pvs=4)".
+At least of 2024-10-30, this dashboard is a scrappy work-in-progress to help spur discussion at [FDS-5 Bangkok](https://www.fildev.io/FDS-5) and shouldn't be viewed as canonical.  It is being worked on actively by members of the "[PMF Targets Working Group](https://protocollabs.notion.site/Filecoin-PMF-Targets-Working-Group-111837df73d480b6a3a9e5bfd73063de?pvs=4)".
 
 ## Purpose
 
-The purpose of this dashboard currently is to help fascilitate the market between onramps/aggregators and Storage Providers (SPs) so onramps/aggregators can find SPs to use and SPs can understand how they are being evaluated.  This is being done by by exposing SP performance against the service classes with their supporting SLOs as defined in [filecoin-project/service-classes](https://github.com/filecoin-project/service-classes).
+The purpose of this dashboard currently is to help facilitate the market between onramps/aggregators and Storage Providers (SPs) so onramps/aggregators can find SPs to use and SPs can understand how they are being evaluated.  This is being done by exposing SP performance against the service classes with their supporting SLOs as defined in [filecoin-project/service-classes](https://github.com/filecoin-project/service-classes).
 
 ## Dashboard URL
 
@@ -21,13 +21,13 @@ See [metrics.md](./src/metrics.md) and [faq.md](./src/faq.md)
 
 If you want to help with data presentation, layout, etc. please see [implementation details](#implementation-details) below and open a PR.
 
-Discussion and improvement proposals around service classes, SLOs, SLIs, and their defitions should occur in [filecoin-project/service-classes](https://github.com/filecoin-project/service-classes).
+Discussion and improvement proposals around service classes, SLOs, SLIs, and their definitions should occur in [filecoin-project/service-classes](https://github.com/filecoin-project/service-classes).
 
 ## Development environment
 Below are the expected tools to install:
 * `npm` - Not needed if you're using [devcontainer.json](.devontainer/devcontainer.json)
 * [DuckDB CLI](https://duckdb.org/docs/installation/) - Not needed if you're using [devcontainer.json](.devontainer/devcontainer.json)
-* [Markdown All in One VS Code extension](https://markdown-all-in-one.github.io/) - This is used for markdown-all-in-one.github.io/docs/guide/table-of-contents.html, including its syntax for for ommitting certain headers.  
+* [Markdown All in One VS Code extension](https://markdown-all-in-one.github.io/docs/guide/#features) - This is used for generating [table of contents](https://markdown-all-in-one.github.io/docs/guide/table-of-contents.html), including its syntax for omitting certain headers.
 
 ## Implementation Details
 
@@ -61,11 +61,11 @@ For more, see <https://observablehq.com/framework/getting-started>.
 
 ## Command reference
 
-| Command           | Description                                              |
-| ----------------- | -------------------------------------------------------- |
-| `npm install`            | Install or reinstall dependencies                        |
-| `npm run dev`        | Start local preview server                               |
-| `npm run build`      | Build your static site, generating `./dist`              |
-| `npm run deploy`     | Deploy your app to Observable                            |
-| `npm run clean`      | Clear the local data loader cache                        |
-| `npm run observable` | Run commands like `observable help`                      |
+| Command              | Description                                 |
+| -------------------- | ------------------------------------------- |
+| `npm install`        | Install or reinstall dependencies           |
+| `npm run dev`        | Start local preview server                  |
+| `npm run build`      | Build your static site, generating `./dist` |
+| `npm run deploy`     | Deploy your app to Observable               |
+| `npm run clean`      | Clear the local data loader cache           |
+| `npm run observable` | Run commands like `observable help`         |
