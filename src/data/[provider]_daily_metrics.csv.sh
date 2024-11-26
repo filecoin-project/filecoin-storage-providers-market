@@ -25,6 +25,10 @@ if [ ! -f "$TMPDIR/storage_providers_metrics.parquet" ]; then
         -- Sector Events
         sector_added_events_count,
         sector_faulted_events_count,
+
+        -- Sector Health
+        active_sectors,
+        sector_health_rate * 100 as sector_health_rate,
       FROM read_parquet('https://data.filecoindataportal.xyz/filecoin_daily_storage_providers_metrics.parquet')
       WHERE date >= CURRENT_DATE() - INTERVAL '90 days'
       ORDER BY date desc

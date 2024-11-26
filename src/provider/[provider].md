@@ -9,15 +9,16 @@
   - [Power](#power)
   - [Sectors](#sectors)
 
-
 ```js
 const provider_metrics = FileAttachment(`../data/${observable.params.provider}_daily_metrics.csv`).csv({typed: true});
 ```
 
 ## Service Class Performance
+
 _How an SP performs against the [various defined service classes and their coresponding service level objectives](https://github.com/filecoin-project/service-classes)._
 
 ### "Warm" Service Class
+
 _How an SP performs again the [(TBD) "warm" service class](https://github.com/filecoin-project/service-classes/service-classes/warm.md)._
 
 #### Retrievability
@@ -47,6 +48,7 @@ _How an SP performs again the [(TBD) "warm" service class](https://github.com/fi
     ]
   }))
   ```
+
 </div>
 <div class="card">
 
@@ -78,10 +80,11 @@ _How an SP performs again the [(TBD) "warm" service class](https://github.com/fi
     }
   }))
   ```
+
 </div>
 </div>
 
-#### Durability 
+#### Durability
 
 <div class="card">
 
@@ -98,15 +101,15 @@ resize((width) => Plot.plot({
   width,
   marks: [
     Plot.ruleY([0]),
-    Plot.text(
-      ["To be implemented"],
-      {
-        x: 0,
-        y: 40,
-        fontSize: 48,
-        fill: "var(--theme-foreground-faint)"
-      }
-    )
+    Plot.rectY(provider_metrics, {
+      x: "date",
+      y: "sector_health_rate",
+      fill: "orange",
+      fillOpacity: 0.6,
+      interval: "day",
+      tip: true
+    }),
+    Plot.ruleY([95], {stroke: "green", strokeWidth: 3}),
   ]
 }))
 ```
@@ -137,6 +140,7 @@ resize((width) => Plot.plot({
     ]
   }))
   ```
+
 </div>
 
 <div class="card">
@@ -158,10 +162,12 @@ resize((width) => Plot.plot({
     ]
   }))
   ```
+
 </div>
 </div>
 
 ### Power
+
 <div class="grid grid-cols-2">
 <div class="card">
 
@@ -182,6 +188,7 @@ resize((width) => Plot.plot({
     ]
   }))
   ```
+
 </div>
 
 <div class="card">
@@ -203,10 +210,12 @@ resize((width) => Plot.plot({
     ]
   }))
   ```
+
 </div>
 </div>
 
 ### Sectors
+
 <div class="grid grid-cols-2">
 <div class="card">
 
@@ -228,6 +237,7 @@ resize((width) => Plot.plot({
     ]
   }))
   ```
+
 </div>
 
 <div class="card">
@@ -250,5 +260,6 @@ resize((width) => Plot.plot({
     ]
   }))
   ```
+
 </div>
 </div>
