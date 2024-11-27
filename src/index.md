@@ -13,6 +13,8 @@ This dashboard is a scrappy work-in-progress to help spur discussion at [FDS-5 B
 const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true});
 const daily_providers_metrics = FileAttachment("data/daily_providers_metrics.csv").csv({typed: true});
 
+// TODO: factor out these helper functions so they can be used on the "provider detail pages" as well.
+
 // Mutates the provided plotConfig by adding a caption if one doesn't exist
 function addPlotCaption(plotConfig, href) {
   if (!plotConfig.caption) {
@@ -121,13 +123,12 @@ Service Classes and their corresponding Service Level Objectives are defined in 
 
   ```js
   resize((width) => Plot.plot(addPlotCaption({
-    title: "\"Warm\" Service Class Conformance",
-    subtitle: html`Providers conforming to warm service class`,
+    title: "\"Warm\" Service Class Conformance: Retrievability",
+    subtitle: html`Providers meeting the "Warm" service class retrievability SLO`,
     x: { label: "Date" },
     y: {
       grid: true,
-      label: "Meet Retrieval SLI",
-      domain: [0, 100]
+      label: "# of SPs",
     },
     width,
     marks: [
@@ -146,12 +147,12 @@ Service Classes and their corresponding Service Level Objectives are defined in 
 
   ```js
   resize((width) => Plot.plot(addPlotCaption({
-    title: "\"Warm\" Service Class Conformance",
-    subtitle: html`Providers conforming to warm service class`,
+    title: "\"Warm\" Service Class Conformance: Sector Health",
+    subtitle: html`Providers meeting the "Warm" service class sector health SLO`,
     x: { label: "Date" },
     y: {
       grid: true,
-      label: "Meet Sector Health SLI",
+      label: "# of SPs",
     },
     width,
     marks: [
