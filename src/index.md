@@ -11,7 +11,7 @@ This dashboard is a scrappy work-in-progress to help spur discussion at [FDS-5 B
 
 ```js
 const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true});
-const daily_retrieval_metrics = FileAttachment("data/daily_retrieval_metrics.csv").csv({typed: true});
+const daily_providers_metrics = FileAttachment("data/daily_providers_metrics.csv").csv({typed: true});
 
 // Mutates the provided plotConfig by adding a caption if one doesn't exist
 function addPlotCaption(plotConfig, href) {
@@ -116,6 +116,7 @@ These are aggregate views looking at all Storage Providers on the network.
 Service Classes and their corresponding Service Level Objectives are defined in [filecoin-project/service-classes](https://github.com/filecoin-project/service-classes).
 
 <div class="grid grid-cols-2">
+
   <div class="card">
 
   ```js
@@ -131,7 +132,7 @@ Service Classes and their corresponding Service Level Objectives are defined in 
     width,
     marks: [
       Plot.ruleY([0]),
-      Plot.lineY(daily_retrieval_metrics, {
+      Plot.lineY(daily_providers_metrics, {
         x: "date",
         y: "meet_retrieval_sli",
         tip: true,
@@ -141,7 +142,33 @@ Service Classes and their corresponding Service Level Objectives are defined in 
   ```
 
   </div>
+  <div class="card">
 
+  ```js
+  resize((width) => Plot.plot(addPlotCaption({
+    title: "\"Warm\" Service Class Conformance",
+    subtitle: html`Providers conforming to warm service class`,
+    x: { label: "Date" },
+    y: {
+      grid: true,
+      label: "Meet Sector Health SLI",
+    },
+    width,
+    marks: [
+      Plot.ruleY([0]),
+      Plot.lineY(daily_providers_metrics, {
+        x: "date",
+        y: "meet_sector_health_sli",
+        tip: true,
+      })
+    ]
+  })))
+  ```
+
+  </div>
+
+
+</div>
   <div class="card">
 
   ```js
@@ -172,8 +199,6 @@ Service Classes and their corresponding Service Level Objectives are defined in 
   ```
 
   </div>
-
-</div>
 
 ## Storage Providers
 
