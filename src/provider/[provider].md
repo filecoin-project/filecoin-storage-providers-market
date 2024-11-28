@@ -87,6 +87,8 @@ _How an SP performs again the [(TBD) "warm" service class](https://github.com/fi
 
 #### Durability
 
+<div class="grid grid-cols-2">
+
 <div class="card">
 
 ```js
@@ -114,6 +116,31 @@ resize((width) => Plot.plot({
   ]
 }))
 ```
+
+</div>
+
+<div class="card">
+
+```js
+resize((width) => Plot.plot({
+  title: "Active Sectors",
+  subtitle: "Number of active sectors per day.",
+  x: {label: "Date"},
+  y: {grid: true, label: "Sectors"},
+  width,
+  marks: [
+    Plot.ruleY([0]),
+    Plot.lineY(provider_metrics, {
+      x: "date",
+      y: "active_sectors",
+      stroke: "steelblue",
+      tip: true
+    })
+  ]
+}))
+```
+
+</div>
 
 </div>
 
