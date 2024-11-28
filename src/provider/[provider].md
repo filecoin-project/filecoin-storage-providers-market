@@ -44,7 +44,8 @@ _How an SP performs again the [(TBD) "warm" service class](https://github.com/fi
         y: d => d.successful_retrieval_requests / d.total_retrieval_requests * 100 || 0,
         stroke: "orange",
         tip: true
-      })
+      }),
+      Plot.ruleY([90], {stroke: "green", strokeWidth: 3})
     ]
   }))
   ```
