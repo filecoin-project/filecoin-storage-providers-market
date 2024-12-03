@@ -19,8 +19,8 @@ Below are explanatory notes on the metrics that that are visualized on this dash
 
 ## Abbreviations
 The following abbreviations are used throughout this page and site:
-* SLI - service level indicator
-* SLO - service level objective
+* SLI - [service level indicator](https://github.com/filecoin-project/service-classes/blob/main/README.md#service-level-indicators)
+* SLO - [service level objective](https://github.com/filecoin-project/service-classes/blob/main/README.md#service-level-objectives)
 * SP - storage provider.  And by "storage provider", we mean the entity as defined in the Filecoin protocol with an individual id that commits sectors, accepts deals, etc.
 
 ## Aggregate Metrics
