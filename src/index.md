@@ -1,13 +1,22 @@
-# Filecoin Storage Providers Market Dashboard
+# Filecoin Storage Providers Market Dashboard <!-- omit from toc -->
 
 👋 **Welcome!** 🔎 Get visibility into the market between Storage Clients and Storage Providers.  🎯 The goal is to help Storage Clients like onramps and aggregators find potential Storage Providers, and to help Storage Providers understand how they are evaluated and compared.
 
 - Learn more about the [metrics](metrics).
 - Check the [code](https://github.com/filecoin-project/filecoin-storage-providers-market).
 
+- [Status](#status)
+- [Network-Wide Metrics](#network-wide-metrics)
+  - [SP Activity](#sp-activity)
+  - [Service Class Conformance](#service-class-conformance)
+    - ["Warm" Service Class Conformance](#warm-service-class-conformance)
+    - ["Cold" Service Class Conformance](#cold-service-class-conformance)
+- [Storage Providers List](#storage-providers-list)
+
+
 ## Status
 
-This dashboard is a scrappy work-in-progress to help spur discussion at [FDS-5 Bangkok](https://www.fildev.io/FDS-5) and shouldn't be viewed as canonical.  It is being worked on actively by members of the "[PMF Targets Working Group](https://protocollabs.notion.site/Filecoin-PMF-Targets-Working-Group-111837df73d480b6a3a9e5bfd73063de?pvs=4)".
+* 2024-12-03: This dashboard is a work-in-progress to give visualization to in-progress [Service Class definitions](https://github.com/filecoin-project/service-classes) and measurement.  It is being worked on actively by members of the "[PMF Targets Working Group](https://protocollabs.notion.site/Filecoin-PMF-Targets-Working-Group-111837df73d480b6a3a9e5bfd73063de?pvs=4)".
 
 ```js
 const daily_metrics = FileAttachment("data/daily_metrics.csv").csv({typed: true});
@@ -117,6 +126,10 @@ These are aggregate views looking at all Storage Providers on the network.
 
 Service Classes and their corresponding Service Level Objectives are defined in [filecoin-project/service-classes](https://github.com/filecoin-project/service-classes).
 
+#### "Warm" Service Class Conformance
+
+[📚 "Warm" Service Class definition](https://github.com/filecoin-project/service-classes/blob/main/service-classes/warm.md).
+
 <div class="grid grid-cols-2">
 
   <div class="card">
@@ -168,6 +181,9 @@ Service Classes and their corresponding Service Level Objectives are defined in 
 
   </div>
 
+#### "Cold" Service Class Conformance
+
+[📚 "Cold" Service Class README](https://github.com/filecoin-project/service-classes/blob/main/service-classes/cold.md).
 
 </div>
   <div class="card">
@@ -201,9 +217,9 @@ Service Classes and their corresponding Service Level Objectives are defined in 
 
   </div>
 
-## Storage Providers
+## Storage Providers List
 
-The table below lists metrics for Filecoin Storage Providers.
+The table below lists metrics for Filecoin Storage Providers.  More metrics including service class performance graphs can be viewed by clicking into a given SP.  ([Tracking issue to expose service class metrics into the table below](https://github.com/filecoin-project/filecoin-storage-providers-market/issues/9).)
 
 ```js
 const storage_providers = FileAttachment("data/storage_providers.csv").csv({typed: true});

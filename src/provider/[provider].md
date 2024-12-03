@@ -15,11 +15,11 @@ const provider_metrics = FileAttachment(`../data/${observable.params.provider}_d
 
 ## Service Class Performance
 
-_How an SP performs against the [various defined service classes and their coresponding service level objectives](https://github.com/filecoin-project/service-classes)._
+_How an SP performs against the [various defined service classes and their corresponding service level objectives](https://github.com/filecoin-project/service-classes)._
 
 ### "Warm" Service Class
 
-_How an SP performs again the [(TBD) "warm" service class](https://github.com/filecoin-project/service-classes/service-classes/warm.md)._
+_How an SP performs again the [(TBD) "warm" service class](https://github.com/filecoin-project/service-classes/service-classes/warm.md).  Read the ["Warm" Service Class definition](https://github.com/filecoin-project/service-classes/blob/main/service-classes/warm.md) for more information on the service class' [SLOs](https://github.com/filecoin-project/service-classes/blob/main/README.md#service-level-objectives) and underlying [SLIs](https://github.com/filecoin-project/service-classes/blob/main/README.md#service-level-indicators)._
 
 #### Retrievability
 
