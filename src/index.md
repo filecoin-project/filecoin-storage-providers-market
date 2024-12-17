@@ -119,6 +119,7 @@ These are aggregate views looking at all Storage Providers on the network.
   ```
 
   </div>
+
 </div>
 
 
@@ -126,9 +127,9 @@ These are aggregate views looking at all Storage Providers on the network.
 
 Service Classes and their corresponding Service Level Objectives are defined in [filecoin-project/service-classes](https://github.com/filecoin-project/service-classes).
 
-#### "Warm" Service Class Conformance
+#### ["Warm" Service Class Conformance
 
-[📚 "Warm" Service Class definition](https://github.com/filecoin-project/service-classes/blob/main/service-classes/warm.md).
+[📚 Definition.
 
 <div class="grid grid-cols-2">
 
@@ -156,6 +157,7 @@ Service Classes and their corresponding Service Level Objectives are defined in 
   ```
 
   </div>
+
   <div class="card">
 
   ```js
@@ -180,42 +182,43 @@ Service Classes and their corresponding Service Level Objectives are defined in 
   ```
 
   </div>
+</div>
 
 #### "Cold" Service Class Conformance
 
 [📚 "Cold" Service Class README](https://github.com/filecoin-project/service-classes/blob/main/service-classes/cold.md).
 
+
+<div class="card">
+
+```js
+resize((width) => Plot.plot(addPlotCaption({
+  title: "\"Cold\" Service Class Conformance",
+  subtitle: "Providers conforming to archive SLO standards",
+  x: { label: "Date" },
+  y: {
+    grid: true,
+    label: "Conformance (%)",
+    domain: [0, 100]
+  },
+  width,
+  marks: [
+    Plot.ruleY([0]),
+    Plot.ruleY([80]),
+    Plot.text(
+      ["To be implemented"],
+      {
+        x: 0,
+        y: 40,
+        fontSize: 48,
+        fill: "var(--theme-foreground-faint)"
+      }
+    )
+  ]
+})))
+```
+
 </div>
-  <div class="card">
-
-  ```js
-  resize((width) => Plot.plot(addPlotCaption({
-    title: "\"Cold\" Service Class Conformance",
-    subtitle: "Providers conforming to archive SLO standards",
-    x: { label: "Date" },
-    y: {
-      grid: true,
-      label: "Conformance (%)",
-      domain: [0, 100]
-    },
-    width,
-    marks: [
-      Plot.ruleY([0]),
-      Plot.ruleY([80]),
-      Plot.text(
-        ["To be implemented"],
-        {
-          x: 0,
-          y: 40,
-          fontSize: 48,
-          fill: "var(--theme-foreground-faint)"
-        }
-      )
-    ]
-  })))
-  ```
-
-  </div>
 
 ## Storage Providers List
 
@@ -229,6 +232,10 @@ const storage_providers = FileAttachment("data/storage_providers.csv").csv({type
 Inputs.table(storage_providers, {
   columns: [
     "provider_id",
+    "days_meet_both_slos",
+    "proportion_days_meet_both_slos",
+    "days_meet_retrieval_slo",
+    "days_meet_sector_health_slo",
     "total_active_deals",
     "total_active_data_uploaded_tibs",
     "total_active_unique_clients",
@@ -244,6 +251,10 @@ Inputs.table(storage_providers, {
   ],
   header: {
     provider_id: "Provider ID",
+    days_meet_both_slos: "Days Meeting Both SLOS",
+    proportion_days_meet_both_slos: "Proportion Days Meeting Both SLOS",
+    days_meet_retrieval_slo: "Days Meeting Retrieval SLO",
+    days_meet_sector_health_slo: "Days Meeting Sector Health SLO",
     total_active_deals: "Active Deals",
     total_active_data_uploaded_tibs: "Active Data Uploaded (TiB)",
     total_active_unique_clients: "Active Unique Clients",
@@ -257,7 +268,7 @@ Inputs.table(storage_providers, {
     provider_collateral: "Provider Collateral",
     capacity_utilization_ratio: "Capacity Utilization Ratio"
   },
-  sort: "total_active_deals",
+  sort: "proportion_days_meet_both_slos",
   reverse: true,
   rows: 20,
   select: false,
