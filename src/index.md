@@ -235,6 +235,7 @@ Inputs.table(storage_providers, {
   columns: [
     "provider_id",
     "days_meet_both_slos",
+    "proportion_days_meet_both_slos",
     "days_meet_retrieval_slo",
     "days_meet_sector_health_slo",
     "total_active_deals",
@@ -252,7 +253,8 @@ Inputs.table(storage_providers, {
   ],
   header: {
     provider_id: "Provider ID",
-    days_meet_both_slos: "Days Meeting Both SLOS",
+    days_meet_both_slos: "Days Meeting Both SLOs",
+    proportion_days_meet_both_slos: "Proportion Days Meeting Both SLOs",
     days_meet_retrieval_slo: "Days Meeting Retrieval SLO",
     days_meet_sector_health_slo: "Days Meeting Sector Health SLO",
     total_active_deals: "Active Deals",
