@@ -228,12 +228,13 @@ The table below lists metrics for Filecoin Storage Providers.  More metrics incl
 const storage_providers = FileAttachment("data/storage_providers.csv").csv({typed: true});
 ```
 
+<div id="storage-providers-table">
+
 ```js
 Inputs.table(storage_providers, {
   columns: [
     "provider_id",
     "days_meet_both_slos",
-    "proportion_days_meet_both_slos",
     "days_meet_retrieval_slo",
     "days_meet_sector_health_slo",
     "total_active_deals",
@@ -252,7 +253,6 @@ Inputs.table(storage_providers, {
   header: {
     provider_id: "Provider ID",
     days_meet_both_slos: "Days Meeting Both SLOS",
-    proportion_days_meet_both_slos: "Proportion Days Meeting Both SLOS",
     days_meet_retrieval_slo: "Days Meeting Retrieval SLO",
     days_meet_sector_health_slo: "Days Meeting Sector Health SLO",
     total_active_deals: "Active Deals",
@@ -277,3 +277,4 @@ Inputs.table(storage_providers, {
   }
 })
 ```
+</div>
