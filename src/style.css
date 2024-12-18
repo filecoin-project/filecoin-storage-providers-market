@@ -9,6 +9,7 @@
 p,
 table,
 figure,
+ul,
 figcaption,
 h1,
 h2,
@@ -17,4 +18,11 @@ h4,
 h5,
 h6 {
     max-width: none;
+}
+
+/* This level of specificity was needed to override default Observable styles. 
+   This allows us not to specify each column that we want to center. */
+div#storage-providers-table .observablehq th {
+    text-align: center;
+    white-space: break-spaces;
 }
