@@ -129,7 +129,7 @@ Service Classes and their corresponding Service Level Objectives are defined in 
 
 #### "Warm" Service Class Conformance
 
-[📚 Definition.
+[📚 "Warm" Service Class definition](https://github.com/filecoin-project/service-classes/blob/main/service-classes/warm.md).
 
 <div class="grid grid-cols-2">
 
