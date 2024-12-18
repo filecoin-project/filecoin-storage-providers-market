@@ -16,7 +16,7 @@ COPY (
 
     select
         date,
-        count(distinct provider_id) filter (where spark_retrieval_success_rate > 0.90) as meet_retrieval_sli,
+        count(distinct provider_id) filter (where spark_retrieval_success_rate >= 0.90) as meet_retrieval_slo,
         count(distinct provider_id) filter (where sector_health_rate between 0.95 and 1.00) as meet_sector_health_sli,
     from base
     group by date
