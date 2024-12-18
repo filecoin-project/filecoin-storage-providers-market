@@ -127,7 +127,7 @@ These are aggregate views looking at all Storage Providers on the network.
 
 Service Classes and their corresponding Service Level Objectives are defined in [filecoin-project/service-classes](https://github.com/filecoin-project/service-classes).
 
-#### ["Warm" Service Class Conformance
+#### "Warm" Service Class Conformance
 
 [📚 Definition.
 
