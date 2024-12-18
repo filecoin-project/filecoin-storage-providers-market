@@ -149,7 +149,7 @@ Service Classes and their corresponding Service Level Objectives are defined in 
       Plot.ruleY([0]),
       Plot.lineY(daily_providers_metrics, {
         x: "date",
-        y: "meet_retrieval_sli",
+        y: "meet_retrieval_slo",
         tip: true,
       })
     ]
@@ -174,7 +174,7 @@ Service Classes and their corresponding Service Level Objectives are defined in 
       Plot.ruleY([0]),
       Plot.lineY(daily_providers_metrics, {
         x: "date",
-        y: "meet_sector_health_sli",
+        y: "meet_sector_health_slo",
         tip: true,
       })
     ]
